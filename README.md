@@ -192,7 +192,7 @@
 		For Java:
 			Please create an implementation plan named plan/implementation_plan.md that conveys
 			how to construct a new Java project in this folder using JDK 25, Micronaut, and Gradle for
-			dependency management. 
+			dependency management.  Do NOT use any Spring-related libraries.
 		
 		For Python:
 			Please create an implementation plan named plan/implementation_plan.md that conveys how to construct a new Python project in this folder using Python 3.12+, FastAPI, and uv (or Poetry) for dependency management.  

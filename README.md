@@ -27,10 +27,7 @@
 
 	You might be tempted to use NotebookLM, but I am going to recommend you download Joplin instead.
 	
-	It is open-source, available on every platform, and can be encrypted.  The big win for me
-	personally is the offline-first approach that Joplin takes, while still offering mobile, web,
-	and desktop sync through any of the cloud providers you already use (including Microsoft
-	OneDrive, Google Drive, Dropbox, and iCloud).  It's available for Windows, Mac, Linux, Android, and iOS.
+	It is open-source, available on every platform, and can be encrypted.  The big win for me personally is the offline-first approach that Joplin takes, while still offering mobile, web, and desktop sync through any of the cloud providers you already use (including Microsoft OneDrive, Google Drive, Dropbox, and iCloud).  It's available for Windows, Mac, Linux, Android, and iOS.
 
 	Best of all, Joplin allows bidirectional note management from VSCode and your browser.
 
@@ -38,14 +35,9 @@
 
 ##  Hardware for Hosting At Home for Free
 
-	To host models at home, you need to be able to load the model into memory to be fast,
-	although there are models engineered to run in environments without GPU availability.
-	One of the primary reasons to host from home is to be able to test and expand your awareness
-	of guardrails without setting off alarm bells with remote/subscription-based model services.
+	To host models at home, you need to be able to load the model into memory to be fast, although there are models engineered to run in environments without GPU availability. One of the primary reasons to host from home is to be able to test and expand your awareness of guardrails without setting off alarm bells with remote/subscription-based model services.
 
-	You need hardware acceleration, but there are affordable options.  Please be aware that desktop video cards
-	use a LOT of power, but laptop video cards with tons of VRAM are much more affordable and can still load
-	models in memory and are very usable.
+	You need hardware acceleration, but there are affordable options.  Please be aware that desktop video cards use a LOT of power, but laptop video cards with tons of VRAM are much more affordable and can still load models in memory and are very usable.
 
 	The following at-home hardware solutions for hosting (to be entirely free) are listed in order of performance.
 	
@@ -88,8 +80,7 @@
 		+ Windows -> look for deals on any Intel-based laptop with a 4070, or a 5060.
 		+ MacOS -> look for an M4 or an M5 with the most RAM you can find.
 
-	NOTE: System RAM is not the same as video RAM, and companies will do their best to trick you,
-	but there are incredible deals to be had on Black Friday and Cyber Monday.
+	NOTE: System RAM is not the same as video RAM, and companies will do their best to trick you, but there are incredible deals to be had on Black Friday and Cyber Monday.
 
 	How do I find out how much memory I have on my current machine? 
 		[Windows Key] -> dxdiag -> [ENTER] -> Display 1 -> Display 2
@@ -98,19 +89,13 @@
 
 	You need a good code editor that supports AI development.
 
-	I HIGHLY recommend VSCode.  In addition to being a well-supported editor across all platforms,
-	it has great options at home as well as at work.  
+	I HIGHLY recommend VSCode.  In addition to being a well-supported editor across all platforms, it has great options at home as well as at work.  
 
-	The Antigravity IDE is a preconfigured VSCode download that has been optimized for use with 
-	a Google AI Pro subscription.  A Google AI Pro subscription retails for $20 a month, with a 
-	50% discount for Verizon customers and another 50% off of that for Verizon employees.
+	The Antigravity IDE is a preconfigured VSCode download that has been optimized for use with a Google AI Pro subscription.  A Google AI Pro subscription retails for $20 a month, with a 50% discount for Verizon customers and another 50% off of that for Verizon employees.
 
-	For $5 a month, you get 5 TB of cloud storage, extended quotas for Gemini models, GPT, and
-	Claude Sonnet and Opus.  You also get additional integrations enabled between gemini.google.com
-	and Google Drive, Docs, Slides, Sheets, Mail, Calendar, and NotebookLM (everything except Picasa).
+	For $5 a month, you get 5 TB of cloud storage, extended quotas for Gemini models, GPT, and Claude Sonnet and Opus.  You also get additional integrations enabled between gemini.google.com and Google Drive, Docs, Slides, Sheets, Mail, Calendar, and NotebookLM (everything except Picasa).
 
-	To enable the discount, open your Verizon phone, go to the My Verizon Application and 
-	go to "Plan Perks" and choose "Productivity Perks" and choose "Google AI Pro" for $5.
+	To enable the discount, open your Verizon phone, go to the My Verizon Application and go to "Plan Perks" and choose "Productivity Perks" and choose "Google AI Pro" for $5.
 
 ##  Choose a Model Server
 
@@ -132,9 +117,7 @@
 	2. LMStudio (UI + Huggingface // home use)
 	3. vllm (cli // horizontally scales)
 
-	NOTE: If you have more than one machine with an accelerated video card or a Mac M4/M5 processor,
-	you can download NVIDIA PAIR and use it as a dynamic OpenAI-based proxy that you connect to in
-	the same manner as the above servers.
+	NOTE: If you have more than one machine with an accelerated video card or a Mac M4/M5 processor, you can download NVIDIA PAIR and use it as a dynamic OpenAI-based proxy that you connect to in	the same manner as the above servers.
 
 ##  Install the Model Server
 
@@ -162,24 +145,17 @@
 
 	In the beginning, I recommend you start with a small IBM Granite model -> granite3-moe:3b
 
-	Granite is a great multi-purpose model provided by IBM that is origined in the United States
-	and has been vetted by multiple national security agencies and is available using an entirely
-	Permissive licensing model.  Best of all, Granite is approved for use in our corporate environment.
+	Granite is a great multi-purpose model provided by IBM that is origined in the United States and has been vetted by multiple national security agencies and is available using an entirely Permissive licensing model.  Best of all, Granite is approved for use in our corporate environment.
 
 	Use the popular_models.md list to select other models for specific task types.
 
 	To download and activate the granite model, run: ollama pull granite3-moe:3b
 
-	I HIGHLY recommend you download LMStudio to simplify model searching in the future.
-	It is a free application and provides many advanced features.
+	I HIGHLY recommend you download LMStudio to simplify model searching in the future. It is a free application and provides many advanced features.
 
 ##  Create a New Project
 
-	Create a folder BEFORE you open up the Antigravity IDE / VSCode.  If you open VSCode and then
-	use the embedded AI agent to create your application, the context of the agent will be reset
-	when you open the project folder.  If you create the project folder first, and then use your
-	IDE to open that folder, the context used to create the project remains available for reuse
-	in the future (simplifying code changes).
+	Create a folder BEFORE you open up the Antigravity IDE / VSCode.  If you open VSCode and then use the embedded AI agent to create your application, the context of the agent will be reset when you open the project folder.  If you create the project folder first, and then use your IDE to open that folder, the context used to create the project remains available for reuse in the future (simplifying code changes).
 
 	1. For this guide, I'm am going to create c:\java\project\learningai
 	2. Now, open the Antigravity IDE (not the CLI tool) 
@@ -187,40 +163,39 @@
 
 ##  Create a Reusable Prompt for Baseline Projects
 
+		**For the AI Assistant**
 
-		**For the AI Assistant**  
+		Please create an implementation plan named plan/implementation_plan.md that conveys	how to construct a new project in this folder named {PROJECT_NAME} using the following baseline:
+
 		For Java:
-			Please create an implementation plan named plan/implementation_plan.md that conveys
-			how to construct a new Java project in this folder using JDK 25, Micronaut, and Gradle for
-			dependency management.  Do NOT use any Spring-related libraries.
+			Use Java (JDK 25), Micronaut, and Gradle for dependency management.  Do NOT use any Spring-related libraries.
 		
 		For Python:
-			Please create an implementation plan named plan/implementation_plan.md that conveys how to construct a new Python project in this folder using Python 3.12+, FastAPI, and uv (or Poetry) for dependency management.  
+			Use Python (3.12+), FastAPI, and uv for dependency management.
 		
 		Universal:
-			Use GoF patterns where appropriate and provide a web application
-			that is hosted on port 9443 using HTTPS, with a REST API, and an MCP server that uses
-			Streamable HTTP with full support for existing REST API calls.  Please ensure that all
-			three modes are protected by the use of an OAUTH Bearer token for authentication and
-			authorization.
+			Use GoF patterns where appropriate and provide a web application that is hosted on port 9443 using HTTPS, with a REST API, and an MCP server that uses Streamable HTTP with full support for existing REST API calls.  Please ensure that all three modes are protected by the use of an OAUTH Bearer token for authentication and authorization.
 
-			Make sure to only utilize open-source libraries and versions with zero active CVEs and
-			that utilize entirely Permissive licensing.
+			Make sure to only utilize open-source libraries and versions with zero active CVEs and that use entirely Permissive licensing.
 
-			Guarantee that unit tests and container tests are always kept up-to-date and have them
-			utilize ephemeral containers for testing in lieu of mock objects. 
+			Guarantee that unit tests and container tests are always kept up-to-date and have them utilize ephemeral containers for testing in lieu of mock objects.
 
-			The implementation_plan.md must always be kept current to reflect and be able to drive
-			changes to the codebase.
+			The implementation_plan.md must always be kept current to reflect and be able to drive changes to the codebase.
 
-			Be sure to include an OpenAI compatible service class during the implementation that
-			will allow you to interact with a specific Ollama model (using port 11434) by using the 
-			base_url "http://localhost:11434" in lieu of the normal OpenAI base URL, with the 
-			particular model name configurable via a configuration file or environment variables
-			as well as the temperature and max_output_token size for the model conversation.
+			Include an OpenAI compatible service class during the implementation that will allow you to interact with a specific Ollama model (using port 11434) by using the base_url "http://localhost:11434" in lieu of the normal OpenAI base URL, with the particular model name configurable via a configuration file or environment variables as well as the temperature and max_output_token size for the model conversation.  Be sure to include support for conversational chat sessions as well as single question/answer API calls.
+
+			Implement caching where appropriate and use an ephemeral data store like Redis to cache responses from the AI model.
+
+			Implement rate limiting, request validation, and metrics.
+
+			Select ciphers and bit strengths that are guaranteed to be PQC compliant.
 
 			Do not implement the plan until I give you the go ahead to do so.
 
 ##  Implement the Plan
 
-	Review the plan with the AI Assistant to ensure it is still valid and up-to-date.
+	Review the plan with the AI Assistant (Claude, Antigravity, etc.) to ensure the plan is still valid and up-to-date.  If it is, tell it to go ahead and implement the plan.  If not, ask it to go back and update the implementation_plan.md to reflect the changes you want to make to the project.
+
+##  Repeat
+
+	Keep iterating on your project.  Add new capabilities and features, and always keep the implementation_plan.md up-to-date.

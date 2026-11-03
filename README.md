@@ -213,6 +213,9 @@
 			The implementation_plan.md must always be kept current to reflect and be able to drive
 			changes to the codebase.
 
+			Be sure to include an OpenAI compatible service class during the implementation that
+			will allow you to test against the currently loaded Ollama model (using port 11434).
+
 			Do not implement the plan until I give you the go ahead to do so.
 
 ##  Implement the Plan

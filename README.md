@@ -214,7 +214,10 @@
 			changes to the codebase.
 
 			Be sure to include an OpenAI compatible service class during the implementation that
-			will allow you to test against the currently loaded Ollama model (using port 11434).
+			will allow you to interact with a specific Ollama model (using port 11434) by using the 
+			base_url "http://localhost:11434" in lieu of the normal OpenAI base URL, with the 
+			particular model name configurable via a configuration file or environment variables
+			as well as the temperature and max_output_token size for the model conversation.
 
 			Do not implement the plan until I give you the go ahead to do so.
 

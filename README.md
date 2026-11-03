@@ -10,7 +10,20 @@
 
 	This is a learning opportunity.
 
-## Home Hardware for Hosting Models for Free
+##  Somewhere to Take Notes
+
+	You might be tempted to use NotebookLM, but I am going to recommend you download Joplin instead.
+	
+	It is open-source, available on every platform, and can be encrypted.  The big win for me
+	personally is the offline-first approach that Joplin takes, while still offering mobile, web,
+	and desktop sync through any of the cloud providers you already use (including Microsoft
+	OneDrive, Google Drive, Dropbox, and iCloud).  It's available for Windows, Mac, Linux, Android, and iOS.
+
+	Best of all, Joplin allows bidirectional note management from VSCode and your browser.
+
+	Download it here: https://joplinapp.org/download/
+
+##  Hardware for Hosting At Home for Free
 
 	To host models at home, you need to be able to load the model into memory to be fast,
 	although there are models engineered to run in environments without GPU availability.
@@ -56,7 +69,11 @@
 		+ 360 GB/s throughput
 		+ can run 14B token models
 
-	Laptops: (any video card with 8GB or more is optimal, but any 4GB+ is doable)
+	D7. Any machine with an NVIDIA card with 8 GB of VRAM (there are so many deals)
+
+	Laptops: 
+		+ Windows -> look for deals on any Intel-based laptop with a 4070, or a 5060.
+		+ MacOS -> look for an M4 or an M5 with the most RAM you can find.
 
 	NOTE: System RAM is not the same as video RAM, and companies will do their best to trick you,
 	but there are incredible deals to be had on Black Friday and Cyber Monday.
@@ -64,7 +81,7 @@
 	How do I find out how much memory I have on my current machine? 
 		[Windows Key] -> dxdiag -> [ENTER] -> Display 1 -> Display 2
 
-## Select a Code Editor
+##  Select a Code Editor
 
 	You need a good code editor that supports AI development.
 
@@ -82,7 +99,7 @@
 	To enable the discount, open your Verizon phone, go to the My Verizon Application and 
 	go to "Plan Perks" and choose "Productivity Perks" and choose "Google AI Pro" for $5.
 
-## Choose a Model Server
+##  Choose a Model Server
 
 	In order to build your own AI applications, you need to enable programmatic access to AI models.
 
@@ -106,7 +123,7 @@
 	you can download NVIDIA PAIR and use it as a dynamic OpenAI-based proxy that you connect to in
 	the same manner as the above servers.
 
-## Install the Model Server
+##  Install the Model Server
 
 	For this guide, you should download and install Ollama from here -> https://ollama.com/download/windows
 
@@ -143,7 +160,7 @@
 	I HIGHLY recommend you download LMStudio to simplify model searching in the future.
 	It is a free application and provides many advanced features.
 
-## Create a New Project
+##  Create a New Project
 
 	Create a folder BEFORE you open up the Antigravity IDE / VSCode.  If you open VSCode and then
 	use the embedded AI agent to create your application, the context of the agent will be reset
@@ -155,3 +172,36 @@
 	2. Now, open the Antigravity IDE (not the CLI tool) 
 	3. Choose "Open Folder" and select the folder you created in Step 1.
 
+##  Create a Reusable Prompt for Baseline Projects
+
+
+		**For the AI Assistant**  
+		For Java:
+			Please create an implementation plan named plan/implementation_plan.md that conveys
+			how to construct a new Java project in this folder using JDK 25, Micronaut, and Gradle for
+			dependency management. 
+		
+		For Python:
+			Please create an implementation plan named plan/implementation_plan.md that conveys how to construct a new Python project in this folder using Python 3.12+, FastAPI, and uv (or Poetry) for dependency management.  
+		
+		Universal:
+			Use GoF patterns where appropriate and provide a web application
+			that is hosted on port 9443 using HTTPS, with a REST API, and an MCP server that uses
+			Streamable HTTP with full support for existing REST API calls.  Please ensure that all
+			three modes are protected by the use of an OAUTH Bearer token for authentication and
+			authorization.
+
+			Make sure to only utilize open-source libraries and versions with zero active CVEs and
+			that utilize entirely Permissive licensing.
+
+			Guarantee that unit tests and container tests are always kept up-to-date and have them
+			utilize ephemeral containers for testing in lieu of mock objects. 
+
+			The implementation_plan.md must always be kept current to reflect and be able to drive
+			changes to the codebase.
+
+			Do not implement the plan until I give you the go ahead to do so.
+
+##  Implement the Plan 
+
+	Review the plan with the AI Assistant to ensure it is still valid and up-to-date.

@@ -1,3 +1,16 @@
+##  Table of Contents
+
+- [Overview](#overview)
+- [Somewhere to Take Notes](#somewhere-to-take-notes)
+- [Hardware for Hosting At Home for Free](#hardware-for-hosting-at-home-for-free)
+- [Select a Code Editor](#select-a-code-editor)
+- [Choose a Model Server](#choose-a-model-server)
+- [Install the Model Server](#install-the-model-server)
+- [Select Your Model(s)](#select-your-models)
+- [Create a New Project](#create-a-new-project)
+- [Create a Reusable Prompt for Baseline Projects](#create-a-reusable-prompt-for-baseline-projects)
+- [Implement the Plan](#implement-the-plan)
+
 ##  Overview
 
 	This guide shows you how to get set up on your home machine for building AI applications,
@@ -202,6 +215,6 @@
 
 			Do not implement the plan until I give you the go ahead to do so.
 
-##  Implement the Plan 
+##  Implement the Plan
 
 	Review the plan with the AI Assistant to ensure it is still valid and up-to-date.

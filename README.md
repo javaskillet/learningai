@@ -198,4 +198,4 @@
 
 ##  Repeat
 
-	Keep iterating on your project.  Add new capabilities and features, and always keep the implementation_plan.md up-to-date.
+	Keep iterating on your project.  Add new capabilities and features and ALWAYS keep the implementation_plan.md up-to-date.

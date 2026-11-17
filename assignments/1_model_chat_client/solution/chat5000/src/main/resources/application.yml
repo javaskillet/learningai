@@ -1,0 +1,65 @@
+micronaut:
+  application:
+    name: chat5000
+  server:
+    port: -1
+    ssl:
+      enabled: true
+      port: 9663
+      protocols:
+        - TLSv1.3
+      ciphers:
+        - TLS_AES_256_GCM_SHA384
+        - TLS_CHACHA20_POLY1305_SHA256
+      key-store:
+        path: classpath:keystore/chat5000-dev.p12
+        password: ${CHAT5000_KEYSTORE_PASSWORD:chat5000-dev-secret}
+        type: PKCS12
+  router:
+    static-resources:
+      default:
+        enabled: true
+        mapping: /**
+        paths: classpath:public
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+        descriptions: true
+        step: PT1M
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+  prometheus:
+    enabled: true
+    sensitive: false
+  metrics:
+    enabled: true
+    sensitive: false
+
+chat5000:
+  ai:
+    base-url: ${CHAT5000_AI_BASE_URL:`http://localhost:11434`}
+    model: ${CHAT5000_AI_MODEL:llama3.2:1b}
+    temperature: ${CHAT5000_AI_TEMPERATURE:0.7}
+    max-output-tokens: ${CHAT5000_AI_MAX_OUTPUT_TOKENS:4096}
+    timeout-seconds: ${CHAT5000_AI_TIMEOUT_SECONDS:120}
+  valkey:
+    enabled: ${CHAT5000_VALKEY_ENABLED:true}
+    uri: ${CHAT5000_VALKEY_URI:`redis://localhost:6379`}
+    cache-ttl-seconds: ${CHAT5000_CACHE_TTL_SECONDS:300}
+    session-ttl-seconds: ${CHAT5000_SESSION_TTL_SECONDS:3600}
+  rate-limit:
+    enabled: ${CHAT5000_RATE_LIMIT_ENABLED:true}
+    requests-per-minute: ${CHAT5000_RATE_LIMIT_RPM:60}
+    burst-capacity: ${CHAT5000_RATE_LIMIT_BURST:20}
+  security:
+    oauth-issuer: ${CHAT5000_OAUTH_ISSUER:`https://localhost:9663`}
+    oauth-audience: ${CHAT5000_OAUTH_AUDIENCE:chat5000-api}
+    hmac-secret: ${CHAT5000_OAUTH_HMAC_SECRET:chat5000-super-secret-512-bit-hmac-key-for-local-oauth-tokens-change-in-prod}
+    client-id: ${CHAT5000_OAUTH_CLIENT_ID:chat5000-client}
+    client-secret: ${CHAT5000_OAUTH_CLIENT_SECRET:chat5000-secret}
+    token-ttl-seconds: ${CHAT5000_OAUTH_TOKEN_TTL_SECONDS:3600}

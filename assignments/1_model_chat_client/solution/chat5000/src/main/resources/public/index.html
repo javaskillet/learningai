@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat5000 · Local AI Console</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">C5K</div>
+            <div>
+                <h1>Chat5000</h1>
+                <p class="subtitle">Local Ollama · PQC TLS 1.3</p>
+            </div>
+        </div>
+
+        <button id="newSessionBtn" class="btn btn-primary full-width">+ New Conversation</button>
+
+        <div class="sidebar-section">
+            <h3>Conversation History</h3>
+            <ul id="sessionList" class="session-list"></ul>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="status-pill" id="valkeyStatus">Valkey: checking…</div>
+            <div class="status-pill pqc">TLS 1.3 · X25519MLKEM768</div>
+            <button id="logoutBtn" class="btn btn-ghost full-width hidden">Sign Out</button>
+        </div>
+    </aside>
+
+    <main class="main-panel">
+        <header class="topbar">
+            <div class="control-group">
+                <label for="modelSelect">Model</label>
+                <select id="modelSelect" class="select"></select>
+            </div>
+            <div class="control-group">
+                <label for="modeSelect">Mode</label>
+                <select id="modeSelect" class="select">
+                    <option value="session" selected>Conversational Session</option>
+                    <option value="single">Single Q&amp;A (Valkey Cached)</option>
+                </select>
+            </div>
+            <div class="control-group checkbox-group">
+                <input type="checkbox" id="streamToggle" checked>
+                <label for="streamToggle">Stream Output</label>
+            </div>
+            <div class="metrics-bar" id="metricsBar">
+                <span>Hits: <strong id="mCacheHits">0</strong></span>
+                <span>Reqs: <strong id="mRequests">0</strong></span>
+            </div>
+        </header>
+
+        <section id="authGate" class="auth-gate">
+            <div class="auth-card">
+                <h2>OAuth Bearer Authentication</h2>
+                <p>All Web UI, REST API, and MCP Streamable HTTP endpoints are protected by OAuth2 Bearer tokens.</p>
+                <form id="oauthForm">
+                    <label>Client ID
+                        <input type="text" id="clientId" value="chat5000-client" required>
+                    </label>
+                    <label>Client Secret
+                        <input type="password" id="clientSecret" value="chat5000-secret" required>
+                    </label>
+                    <button type="submit" class="btn btn-primary full-width">Obtain OAuth Bearer Token</button>
+                </form>
+                <div class="divider"><span>or paste existing Bearer JWT</span></div>
+                <div class="token-paste">
+                    <input type="password" id="manualToken" placeholder="eyJhbGciOiJIUzUxMiJ9...">
+                    <button id="useTokenBtn" class="btn btn-secondary">Use Token</button>
+                </div>
+                <p id="authError" class="error-text hidden"></p>
+            </div>
+        </section>
+
+        <section id="chatArea" class="chat-area hidden">
+            <div id="messages" class="messages"></div>
+
+            <form id="chatForm" class="composer">
+                <textarea id="promptInput" rows="2" placeholder="Ask your local Ollama model anything… (Enter to send, Shift+Enter for newline)" required></textarea>
+                <div class="composer-actions">
+                    <button type="button" id="clearHistoryBtn" class="btn btn-ghost">Clear</button>
+                    <button type="submit" id="sendBtn" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
